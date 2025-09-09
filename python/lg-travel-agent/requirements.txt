@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+mcp
+langchain
+langchain-openai
+langchain-community
+langchainhub
+tavily-python
+langgraph-checkpoint-sqlite
+langgraph==0.3.5
+langgraph-supervisor==0.0.25
+langchain-mcp-adapters
