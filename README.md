@@ -2,6 +2,7 @@
 
 This repo contains examples applications with steps to run these with [Monocle](https://monocle2ai.org) tracing enabled in VS Code. Follow the steps listed below to configure dev environment and VS Code. Then navigate to individual examples folders to try out various agentic apps with Monocle.
 
+![alt text](images/vscode.png)
 ## Setup dev enviroment
 This section illustrates steps to setup your VS Code to use Monocle.
 ### Pre-requistis

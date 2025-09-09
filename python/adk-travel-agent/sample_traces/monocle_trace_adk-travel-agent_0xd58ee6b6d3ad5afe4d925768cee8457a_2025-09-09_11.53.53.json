@@ -1,0 +1,597 @@
+[{
+    "name": "google.genai.models.AsyncModels.generate_content",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xfbed6dac14e4e305",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xe608d0687f66cdb3",
+    "start_time": "2025-09-09T18:53:52.049393Z",
+    "end_time": "2025-09-09T18:53:52.844492Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/models/google_llm.py:200",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "inference",
+        "entity.1.type": "inference.gemini",
+        "entity.1.inference_endpoint": "https://generativelanguage.googleapis.com/",
+        "entity.1.provider_name": "gcp",
+        "entity.2.name": "gemini-2.0-flash",
+        "entity.2.type": "model.llm.gemini-2.0-flash",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:52.844275Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"You are a helpful agent who can assist users in booking flights.\\n\\nYou are an agent. Your internal name is \\\"adk_flight_booking_agent_5\\\".\\n\\n The description about you is \\\"Agent to book flights based on user queries.\\\"\"}",
+                    "{\"user\": \"Book a flight from SFO to JFK for tomorrow.\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:52.844386Z",
+            "attributes": {
+                "response": "{\"model\": \"I am sorry, I need the current date to book the flight for tomorrow. Could you please provide the current date?\\n\"}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T18:53:52.844443Z",
+            "attributes": {
+                "completion_tokens": 25,
+                "prompt_tokens": 156,
+                "total_tokens": 181,
+                "finish_reason": "STOP",
+                "finish_type": "success"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xe608d0687f66cdb3",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x64f76926710f0053",
+    "start_time": "2025-09-09T18:53:52.018172Z",
+    "end_time": "2025-09-09T18:53:52.849648Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/agents/sequential_agent.py:45",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.adk",
+        "entity.1.name": "adk_flight_booking_agent_5",
+        "entity.1.description": "Agent to book flights based on user queries.",
+        "entity.1.from_agent": "adk_supervisor_agent_5",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:52.849603Z",
+            "attributes": {
+                "query": "Book a flight from SFO to JFK for tomorrow."
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:52.849631Z",
+            "attributes": {
+                "response": "I am sorry, I need the current date to book the flight for tomorrow. Could you please provide the current date?\n"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0x64f76926710f0053",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x50ef40fbcfa231fb",
+    "start_time": "2025-09-09T18:53:52.017672Z",
+    "end_time": "2025-09-09T18:53:52.849705Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/agents/sequential_agent.py:45",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.delegation",
+        "entity.1.type": "agent.adk",
+        "entity.1.from_agent": "adk_supervisor_agent_5",
+        "entity.1.to_agent": "adk_flight_booking_agent_5",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.genai.models.AsyncModels.generate_content",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xe7108825b7130940",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xcc6f12184cec3749",
+    "start_time": "2025-09-09T18:53:52.880368Z",
+    "end_time": "2025-09-09T18:53:53.503705Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/models/google_llm.py:200",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "inference",
+        "entity.1.type": "inference.gemini",
+        "entity.1.inference_endpoint": "https://generativelanguage.googleapis.com/",
+        "entity.1.provider_name": "gcp",
+        "entity.2.name": "gemini-2.0-flash",
+        "entity.2.type": "model.llm.gemini-2.0-flash",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:53.503432Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"You are a helpful agent who can assist users in booking hotels. If you are asked about hotel bookings, provide the relevant information. If not, then just stay silent.\\n\\nYou are an agent. Your internal name is \\\"adk_hotel_booking_agent_5\\\".\\n\\n The description about you is \\\"Agent to book hotels based on user queries.\\\"\"}",
+                    "{\"user\": \"Book a flight from SFO to JFK for tomorrow.\"}",
+                    "{\"user\": \"For context:\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:53.503580Z",
+            "attributes": {
+                "response": "{\"model\": \"I am sorry, I am designed to only book hotels.\"}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T18:53:53.503662Z",
+            "attributes": {
+                "completion_tokens": 12,
+                "prompt_tokens": 234,
+                "total_tokens": 246,
+                "finish_reason": "STOP",
+                "finish_type": "success"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xcc6f12184cec3749",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xe7e224ab18dad328",
+    "start_time": "2025-09-09T18:53:52.850477Z",
+    "end_time": "2025-09-09T18:53:53.510794Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/agents/sequential_agent.py:45",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.adk",
+        "entity.1.name": "adk_hotel_booking_agent_5",
+        "entity.1.description": "Agent to book hotels based on user queries.",
+        "entity.1.from_agent": "adk_supervisor_agent_5",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:53.510769Z",
+            "attributes": {
+                "query": "Book a flight from SFO to JFK for tomorrow."
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:53.510786Z",
+            "attributes": {
+                "response": "I am sorry, I am designed to only book hotels."
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xe7e224ab18dad328",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x50ef40fbcfa231fb",
+    "start_time": "2025-09-09T18:53:52.850395Z",
+    "end_time": "2025-09-09T18:53:53.510824Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/agents/sequential_agent.py:45",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.delegation",
+        "entity.1.type": "agent.adk",
+        "entity.1.from_agent": "adk_supervisor_agent_5",
+        "entity.1.to_agent": "adk_hotel_booking_agent_5",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.genai.models.AsyncModels.generate_content",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0x43973686af0f4e40",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xdad0abf3b4f841d6",
+    "start_time": "2025-09-09T18:53:53.531411Z",
+    "end_time": "2025-09-09T18:53:54.485713Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/models/google_llm.py:200",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "inference",
+        "entity.1.type": "inference.gemini",
+        "entity.1.inference_endpoint": "https://generativelanguage.googleapis.com/",
+        "entity.1.provider_name": "gcp",
+        "entity.2.name": "gemini-2.0-flash",
+        "entity.2.type": "model.llm.gemini-2.0-flash",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:54.485462Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"Summarize the travel details from hotel bookings and flight bookings agents.\\n\\nYou are an agent. Your internal name is \\\"adk_trip_summary_agent_5\\\".\\n\\n The description about you is \\\"Summarize the travel details from hotel bookings and flight bookings agents.\\\"\"}",
+                    "{\"user\": \"Book a flight from SFO to JFK for tomorrow.\"}",
+                    "{\"user\": \"For context:\"}",
+                    "{\"user\": \"For context:\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:54.485595Z",
+            "attributes": {
+                "response": "{\"model\": \"Okay, I will summarize the travel details once the flight booking agent has provided the flight information. Currently, I am waiting for the current date from the flight booking agent to book the flight from SFO to JFK for tomorrow.\\n\"}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T18:53:54.485669Z",
+            "attributes": {
+                "completion_tokens": 46,
+                "prompt_tokens": 137,
+                "total_tokens": 183,
+                "finish_reason": "STOP",
+                "finish_type": "success"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xdad0abf3b4f841d6",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x150f6d9f768c2699",
+    "start_time": "2025-09-09T18:53:53.511257Z",
+    "end_time": "2025-09-09T18:53:54.489660Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/agents/sequential_agent.py:45",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.adk",
+        "entity.1.name": "adk_trip_summary_agent_5",
+        "entity.1.description": "Summarize the travel details from hotel bookings and flight bookings agents.",
+        "entity.1.from_agent": "adk_supervisor_agent_5",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:54.489624Z",
+            "attributes": {
+                "query": "Book a flight from SFO to JFK for tomorrow."
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:54.489648Z",
+            "attributes": {
+                "response": "Okay, I will summarize the travel details once the flight booking agent has provided the flight information. Currently, I am waiting for the current date from the flight booking agent to book the flight from SFO to JFK for tomorrow.\n"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0x150f6d9f768c2699",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x50ef40fbcfa231fb",
+    "start_time": "2025-09-09T18:53:53.511204Z",
+    "end_time": "2025-09-09T18:53:54.489709Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/agents/sequential_agent.py:45",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.delegation",
+        "entity.1.type": "agent.adk",
+        "entity.1.from_agent": "adk_supervisor_agent_5",
+        "entity.1.to_agent": "adk_trip_summary_agent_5",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.agents.base_agent.BaseAgent.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0x50ef40fbcfa231fb",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xee04b43fe11605fe",
+    "start_time": "2025-09-09T18:53:52.017301Z",
+    "end_time": "2025-09-09T18:53:54.489837Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/google/adk/runners.py:237",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.adk",
+        "entity.1.name": "adk_supervisor_agent_5",
+        "entity.1.description": "\n            You are the supervisor agent that coordinates the flight booking and hotel booking.\n            You must provide a consolidated summary back to the full coordination of the user's request.\n        ",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:54.489813Z",
+            "attributes": {
+                "query": "Book a flight from SFO to JFK for tomorrow."
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:54.489828Z",
+            "attributes": {
+                "response": "Okay, I will summarize the travel details once the flight booking agent has provided the flight information. Currently, I am waiting for the current date from the flight booking agent to book the flight from SFO to JFK for tomorrow.\n"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "google.adk.runners.Runner.run_async",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0xee04b43fe11605fe",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x3eb5a814b9d6ac16",
+    "start_time": "2025-09-09T18:53:52.016746Z",
+    "end_time": "2025-09-09T18:53:54.489943Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/python/adk-travel-agent/adk-travel-agent.py:111",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "agentic.request",
+        "entity.1.type": "agent.adk",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T18:53:54.489922Z",
+            "attributes": {
+                "input": "Book a flight from SFO to JFK for tomorrow."
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T18:53:54.489934Z",
+            "attributes": {
+                "response": "Okay, I will summarize the travel details once the flight booking agent has provided the flight information. Currently, I am waiting for the current date from the flight booking agent to book the flight from SFO to JFK for tomorrow.\n"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "workflow",
+    "context": {
+        "trace_id": "0xd58ee6b6d3ad5afe4d925768cee8457a",
+        "span_id": "0x3eb5a814b9d6ac16",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-09-09T18:53:52.016658Z",
+    "end_time": "2025-09-09T18:53:54.489961Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/python/adk-travel-agent/adk-travel-agent.py:111",
+        "scope.agentic.request": "0xcd490bbfa11a77e80b7510bdcf55dd8e",
+        "workflow.name": "adk-travel-agent",
+        "span.type": "workflow",
+        "entity.1.name": "adk-travel-agent",
+        "entity.1.type": "workflow.generic",
+        "entity.2.type": "app_hosting.generic",
+        "entity.2.name": "generic"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "adk-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+]

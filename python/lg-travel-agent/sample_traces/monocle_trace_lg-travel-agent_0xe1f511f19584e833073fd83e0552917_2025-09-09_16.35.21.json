@@ -1,0 +1,935 @@
+[{
+    "name": "openai.resources.chat.completions.AsyncCompletions.create",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x6e3d8cfbcae4203e",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7907a1d149b46b60",
+    "start_time": "2025-09-09T23:35:19.286263Z",
+    "end_time": "2025-09-09T23:35:20.189054Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/openai/_legacy_response.py:381",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.modelapi",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x461b3328019f5bb6a54a256b465ee56b"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.chat_models.base.BaseChatModel.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x7907a1d149b46b60",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x8cd47109bf1f90a1",
+    "start_time": "2025-09-09T23:35:19.284125Z",
+    "end_time": "2025-09-09T23:35:20.199880Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langchain_core/runnables/base.py:5508",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.framework",
+        "entity.1.type": "inference.openai",
+        "entity.1.provider_name": "api.openai.com",
+        "entity.1.inference_endpoint": "https://api.openai.com/v1/",
+        "entity.2.name": "gpt-4o",
+        "entity.2.type": "model.llm.gpt-4o",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x461b3328019f5bb6a54a256b465ee56b",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:20.199701Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"You manage a hotel booking assistant and aflight booking assistant. Assign work to them.If the user asks for weather information, delegate to the weather assistant.\"}",
+                    "{\"human\": \"How's the weather going to be in Mumbai next week\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:20.199791Z",
+            "attributes": {
+                "response": "{\"ai\": {\"name\": \"transfer_to_okahu-demo-lg-agent-weather_assistant\", \"args\": {}, \"id\": \"call_KH3eIDKdgzmD74uPamCjpfEd\", \"type\": \"tool_call\"}}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T23:35:20.199853Z",
+            "attributes": {
+                "completion_tokens": 18,
+                "prompt_tokens": 165,
+                "total_tokens": 183,
+                "finish_reason": "tool_calls",
+                "finish_type": "success",
+                "inference_sub_type": "delegation"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.schema.runnable.RunnableSequence.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x8cd47109bf1f90a1",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x48b78cdff39a8f51",
+    "start_time": "2025-09-09T23:35:19.281022Z",
+    "end_time": "2025-09-09T23:35:20.200121Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/prebuilt/chat_agent_executor.py:763",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "generic",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x461b3328019f5bb6a54a256b465ee56b"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain_core.tools.base.BaseTool.run",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x4d16132710954867",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x48b78cdff39a8f51",
+    "start_time": "2025-09-09T23:35:20.206068Z",
+    "end_time": "2025-09-09T23:35:20.207156Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langchain_core/tools/base.py:604",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "agentic.delegation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.langgraph",
+        "entity.1.from_agent": "okahu-demo-lg-agent-travel_supervisor",
+        "entity.1.to_agent": "okahu-demo-lg-agent-weather_assistant",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x461b3328019f5bb6a54a256b465ee56b",
+        "entity.count": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langgraph.graph.state.CompiledStateGraph.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x48b78cdff39a8f51",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0b994f5a66326723",
+    "start_time": "2025-09-09T23:35:19.278571Z",
+    "end_time": "2025-09-09T23:35:20.211440Z",
+    "status": {
+        "status_code": "ERROR",
+        "description": "ParentCommand: Command(graph='okahu-demo-lg-agent-travel_supervisor:39595d32-7379-f090-490d-258020019a10', update={'messages': [HumanMessage(content=\"How's the weather going to be in Mumbai next week\", additional_kwargs={}, response_metadata={}, id='39fcbbda-42fb-4660-ab97-18a5cfe7273b'), AIMessage(content='', additional_kwargs={'tool_calls': [{'id': 'call_KH3eIDKdgzmD74uPamCjpfEd', 'function': {'arguments': '{}', 'name': 'transfer_to_okahu-demo-lg-agent-weather_assistant'}, 'type': 'function'}], 'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 18, 'prompt_tokens': 165, 'total_tokens': 183, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_f33640a400', 'id': 'chatcmpl-CE29nqhbvdf5oFWau1LWT2K2ROzBN', 'service_tier': 'default', 'finish_reason': 'tool_calls', 'logprobs': None}, name='okahu-demo-lg-agent-travel_supervisor', id='run--30476fc0-8e04-47c6-b1b0-e29780ec4d77-0', tool_calls=[{'name': 'transfer_to_okahu-demo-lg-agent-weather_assistant', 'args': {}, 'id': 'call_KH3eIDKdgzmD74uPamCjpfEd', 'type': 'tool_call'}], usage_metadata={'input_tokens': 165, 'output_tokens': 18, 'total_tokens': 183, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}), ToolMessage(content='Successfully transferred to okahu-demo-lg-agent-weather_assistant', name='transfer_to_okahu-demo-lg-agent-weather_assistant', tool_call_id='call_KH3eIDKdgzmD74uPamCjpfEd')], 'is_last_step': False, 'remaining_steps': 23}, goto='okahu-demo-lg-agent-weather_assistant')"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/utils/runnable.py:583",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.langgraph",
+        "entity.1.name": "okahu-demo-lg-agent-travel_supervisor",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x461b3328019f5bb6a54a256b465ee56b",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:20.208091Z",
+            "attributes": {}
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:20.208103Z",
+            "attributes": {}
+        },
+        {
+            "name": "exception",
+            "timestamp": "2025-09-09T23:35:20.211308Z",
+            "attributes": {
+                "exception.type": "langgraph.errors.ParentCommand",
+                "exception.message": "Command(graph='okahu-demo-lg-agent-travel_supervisor:39595d32-7379-f090-490d-258020019a10', update={'messages': [HumanMessage(content=\"How's the weather going to be in Mumbai next week\", additional_kwargs={}, response_metadata={}, id='39fcbbda-42fb-4660-ab97-18a5cfe7273b'), AIMessage(content='', additional_kwargs={'tool_calls': [{'id': 'call_KH3eIDKdgzmD74uPamCjpfEd', 'function': {'arguments': '{}', 'name': 'transfer_to_okahu-demo-lg-agent-weather_assistant'}, 'type': 'function'}], 'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 18, 'prompt_tokens': 165, 'total_tokens': 183, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_f33640a400', 'id': 'chatcmpl-CE29nqhbvdf5oFWau1LWT2K2ROzBN', 'service_tier': 'default', 'finish_reason': 'tool_calls', 'logprobs': None}, name='okahu-demo-lg-agent-travel_supervisor', id='run--30476fc0-8e04-47c6-b1b0-e29780ec4d77-0', tool_calls=[{'name': 'transfer_to_okahu-demo-lg-agent-weather_assistant', 'args': {}, 'id': 'call_KH3eIDKdgzmD74uPamCjpfEd', 'type': 'tool_call'}], usage_metadata={'input_tokens': 165, 'output_tokens': 18, 'total_tokens': 183, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}), ToolMessage(content='Successfully transferred to okahu-demo-lg-agent-weather_assistant', name='transfer_to_okahu-demo-lg-agent-weather_assistant', tool_call_id='call_KH3eIDKdgzmD74uPamCjpfEd')], 'is_last_step': False, 'remaining_steps': 23}, goto='okahu-demo-lg-agent-weather_assistant')",
+                "exception.stacktrace": "Traceback (most recent call last):\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/opentelemetry/trace/__init__.py\", line 589, in use_span\n    yield span\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/opentelemetry/sdk/trace/__init__.py\", line 1105, in start_as_current_span\n    yield span\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/monocle_apptrace/instrumentation/common/wrapper.py\", line 388, in start_as_monocle_span\n    yield span\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/monocle_apptrace/instrumentation/common/wrapper.py\", line 175, in amonocle_wrapper_span_processor\n    return_value = await wrapped(*args, **kwargs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/pregel/__init__.py\", line 2420, in ainvoke\n    async for chunk in self.astream(\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/pregel/__init__.py\", line 2305, in astream\n    async for _ in runner.atick(\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/pregel/runner.py\", line 455, in atick\n    self.commit(t, exc)\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/pregel/runner.py\", line 551, in commit\n    raise exception\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/pregel/runner.py\", line 444, in atick\n    await arun_with_retry(\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/pregel/retry.py\", line 128, in arun_with_retry\n    return await task.proc.ainvoke(task.input, config)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/utils/runnable.py\", line 585, in ainvoke\n    input = await step.ainvoke(input, config)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/utils/runnable.py\", line 371, in ainvoke\n    ret = await asyncio.create_task(coro, context=context)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/graph/graph.py\", line 115, in _aroute\n    result = await self.path.ainvoke(value, config)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/utils/runnable.py\", line 371, in ainvoke\n    ret = await asyncio.create_task(coro, context=context)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/graph/state.py\", line 922, in _acontrol_branch\n    raise ParentCommand(command)\nlanggraph.errors.ParentCommand: Command(graph='okahu-demo-lg-agent-travel_supervisor:39595d32-7379-f090-490d-258020019a10', update={'messages': [HumanMessage(content=\"How's the weather going to be in Mumbai next week\", additional_kwargs={}, response_metadata={}, id='39fcbbda-42fb-4660-ab97-18a5cfe7273b'), AIMessage(content='', additional_kwargs={'tool_calls': [{'id': 'call_KH3eIDKdgzmD74uPamCjpfEd', 'function': {'arguments': '{}', 'name': 'transfer_to_okahu-demo-lg-agent-weather_assistant'}, 'type': 'function'}], 'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 18, 'prompt_tokens': 165, 'total_tokens': 183, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_f33640a400', 'id': 'chatcmpl-CE29nqhbvdf5oFWau1LWT2K2ROzBN', 'service_tier': 'default', 'finish_reason': 'tool_calls', 'logprobs': None}, name='okahu-demo-lg-agent-travel_supervisor', id='run--30476fc0-8e04-47c6-b1b0-e29780ec4d77-0', tool_calls=[{'name': 'transfer_to_okahu-demo-lg-agent-weather_assistant', 'args': {}, 'id': 'call_KH3eIDKdgzmD74uPamCjpfEd', 'type': 'tool_call'}], usage_metadata={'input_tokens': 165, 'output_tokens': 18, 'total_tokens': 183, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}), ToolMessage(content='Successfully transferred to okahu-demo-lg-agent-weather_assistant', name='transfer_to_okahu-demo-lg-agent-weather_assistant', tool_call_id='call_KH3eIDKdgzmD74uPamCjpfEd')], 'is_last_step': False, 'remaining_steps': 23}, goto='okahu-demo-lg-agent-weather_assistant')\n",
+                "exception.escaped": "False"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "openai.resources.chat.completions.AsyncCompletions.create",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0xe2a0d4502bb94e39",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x917310e0b7705fdf",
+    "start_time": "2025-09-09T23:35:20.215005Z",
+    "end_time": "2025-09-09T23:35:21.582610Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/openai/_legacy_response.py:381",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.modelapi",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.chat_models.base.BaseChatModel.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x917310e0b7705fdf",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xa5e0cc4a7a5efe3f",
+    "start_time": "2025-09-09T23:35:20.214315Z",
+    "end_time": "2025-09-09T23:35:21.584377Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langchain_core/runnables/base.py:5508",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.framework",
+        "entity.1.type": "inference.openai",
+        "entity.1.provider_name": "api.openai.com",
+        "entity.1.inference_endpoint": "https://api.openai.com/v1/",
+        "entity.2.name": "gpt-4o",
+        "entity.2.type": "model.llm.gpt-4o",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:21.584228Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"You are a weather information assistant. Please use the tool available to you for checking weather. Extract city name from the user query and pass it to the weather tool.\"}",
+                    "{\"human\": \"How's the weather going to be in Mumbai next week\"}",
+                    "{\"ai\": \"[{\\\"name\\\": \\\"transfer_to_okahu-demo-lg-agent-weather_assistant\\\", \\\"args\\\": {}, \\\"id\\\": \\\"call_KH3eIDKdgzmD74uPamCjpfEd\\\", \\\"type\\\": \\\"tool_call\\\"}]\"}",
+                    "{\"tool\": \"Successfully transferred to okahu-demo-lg-agent-weather_assistant\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:21.584285Z",
+            "attributes": {
+                "response": "{\"ai\": {\"name\": \"demo_get_weather\", \"args\": {\"city\": \"Mumbai\"}, \"id\": \"call_NDPNRqnIWgQwzU5X86rmOMvW\", \"type\": \"tool_call\"}}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T23:35:21.584360Z",
+            "attributes": {
+                "completion_tokens": 15,
+                "prompt_tokens": 189,
+                "total_tokens": 204,
+                "finish_reason": "tool_calls",
+                "finish_type": "success",
+                "inference_sub_type": "tool_call"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.schema.runnable.RunnableSequence.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0xa5e0cc4a7a5efe3f",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x399d5fd729d6268b",
+    "start_time": "2025-09-09T23:35:20.213914Z",
+    "end_time": "2025-09-09T23:35:21.584632Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/prebuilt/chat_agent_executor.py:763",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "generic",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "mcp.shared.session.BaseSession.send_request",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0xd1b0a032343bc6a5",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xf48dc4a27b4314d7",
+    "start_time": "2025-09-09T23:35:21.608645Z",
+    "end_time": "2025-09-09T23:35:21.621028Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/mcp/client/session.py:293",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "agentic.mcp.invocation",
+        "span.subtype": "routing",
+        "entity.1.name": "demo_get_weather",
+        "entity.1.type": "mcp.server",
+        "entity.1.url": "http://localhost:8007/weather/mcp/",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:21.620988Z",
+            "attributes": {
+                "input": "{\"city\": \"Mumbai\"}"
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:21.621016Z",
+            "attributes": {
+                "output": [
+                    "{\n  \"temperature\": 78\n}"
+                ]
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain_core.tools.base.BaseTool.arun",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0xf48dc4a27b4314d7",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x399d5fd729d6268b",
+    "start_time": "2025-09-09T23:35:21.588195Z",
+    "end_time": "2025-09-09T23:35:21.628267Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langchain_core/tools/base.py:614",
+        "workflow.name": "lg-travel-agent",
+        "is_mcp": true,
+        "span.type": "agentic.tool.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "tool.mcp",
+        "entity.1.name": "demo_get_weather",
+        "entity.1.description": "\n    Get mock weather information for a specified city.\n    \n    Args:\n        city: Name of the city to get weather for (e.g., \"London\", \"New York\", \"Tokyo\")\n    \n    Returns:\n        Dictionary containing mock weather information with random temperature between 40-100.\n    ",
+        "entity.2.name": "okahu-demo-lg-agent-weather_assistant",
+        "entity.2.type": "agent.langgraph",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:21.628247Z",
+            "attributes": {
+                "input": [
+                    "Mumbai"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:21.628259Z",
+            "attributes": {
+                "response": "{\n  \"temperature\": 78\n}"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "openai.resources.chat.completions.AsyncCompletions.create",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x705760e74b8de085",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x55f3961fcdbf5b52",
+    "start_time": "2025-09-09T23:35:21.630263Z",
+    "end_time": "2025-09-09T23:35:23.230252Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/openai/_legacy_response.py:381",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.modelapi",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.chat_models.base.BaseChatModel.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x55f3961fcdbf5b52",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xf94c70cbb2019779",
+    "start_time": "2025-09-09T23:35:21.629823Z",
+    "end_time": "2025-09-09T23:35:23.231262Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langchain_core/runnables/base.py:5508",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.framework",
+        "entity.1.type": "inference.openai",
+        "entity.1.provider_name": "api.openai.com",
+        "entity.1.inference_endpoint": "https://api.openai.com/v1/",
+        "entity.2.name": "gpt-4o",
+        "entity.2.type": "model.llm.gpt-4o",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:23.231208Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"You are a weather information assistant. Please use the tool available to you for checking weather. Extract city name from the user query and pass it to the weather tool.\"}",
+                    "{\"human\": \"How's the weather going to be in Mumbai next week\"}",
+                    "{\"ai\": \"[{\\\"name\\\": \\\"transfer_to_okahu-demo-lg-agent-weather_assistant\\\", \\\"args\\\": {}, \\\"id\\\": \\\"call_KH3eIDKdgzmD74uPamCjpfEd\\\", \\\"type\\\": \\\"tool_call\\\"}]\"}",
+                    "{\"tool\": \"Successfully transferred to okahu-demo-lg-agent-weather_assistant\"}",
+                    "{\"ai\": \"[{\\\"name\\\": \\\"demo_get_weather\\\", \\\"args\\\": {\\\"city\\\": \\\"Mumbai\\\"}, \\\"id\\\": \\\"call_NDPNRqnIWgQwzU5X86rmOMvW\\\", \\\"type\\\": \\\"tool_call\\\"}]\"}",
+                    "{\"tool\": \"{\\n  \\\"temperature\\\": 78\\n}\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:23.231228Z",
+            "attributes": {
+                "response": "{\"ai\": \"The weather in Mumbai next week is expected to be around 78\\u00b0F.\"}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T23:35:23.231254Z",
+            "attributes": {
+                "completion_tokens": 16,
+                "prompt_tokens": 231,
+                "total_tokens": 247,
+                "finish_reason": "stop",
+                "finish_type": "success",
+                "inference_sub_type": "turn_end"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.schema.runnable.RunnableSequence.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0xf94c70cbb2019779",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x399d5fd729d6268b",
+    "start_time": "2025-09-09T23:35:21.629235Z",
+    "end_time": "2025-09-09T23:35:23.231436Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/prebuilt/chat_agent_executor.py:763",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "generic",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langgraph.graph.state.CompiledStateGraph.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x399d5fd729d6268b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0b994f5a66326723",
+    "start_time": "2025-09-09T23:35:20.212498Z",
+    "end_time": "2025-09-09T23:35:23.232537Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph_supervisor/supervisor.py:105",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.langgraph",
+        "entity.1.name": "okahu-demo-lg-agent-weather_assistant",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x8984c3329490a5fd6c4e211516b5d6cd",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:23.232520Z",
+            "attributes": {
+                "query": "How's the weather going to be in Mumbai next week"
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:23.232529Z",
+            "attributes": {
+                "response": "The weather in Mumbai next week is expected to be around 78\u00b0F."
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "openai.resources.chat.completions.AsyncCompletions.create",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x724f830964597efd",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1811f619dc6670aa",
+    "start_time": "2025-09-09T23:35:23.235967Z",
+    "end_time": "2025-09-09T23:35:23.871769Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/openai/_legacy_response.py:381",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.modelapi",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x4a281c886858ef47f603d03ca3987cf"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.chat_models.base.BaseChatModel.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x1811f619dc6670aa",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0421b87e59447765",
+    "start_time": "2025-09-09T23:35:23.235506Z",
+    "end_time": "2025-09-09T23:35:23.872932Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langchain_core/runnables/base.py:5508",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "inference.framework",
+        "entity.1.type": "inference.openai",
+        "entity.1.provider_name": "api.openai.com",
+        "entity.1.inference_endpoint": "https://api.openai.com/v1/",
+        "entity.2.name": "gpt-4o",
+        "entity.2.type": "model.llm.gpt-4o",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x4a281c886858ef47f603d03ca3987cf",
+        "entity.count": 2
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:23.872872Z",
+            "attributes": {
+                "input": [
+                    "{\"system\": \"You manage a hotel booking assistant and aflight booking assistant. Assign work to them.If the user asks for weather information, delegate to the weather assistant.\"}",
+                    "{\"human\": \"How's the weather going to be in Mumbai next week\"}",
+                    "{\"ai\": \"[{\\\"name\\\": \\\"transfer_to_okahu-demo-lg-agent-weather_assistant\\\", \\\"args\\\": {}, \\\"id\\\": \\\"call_KH3eIDKdgzmD74uPamCjpfEd\\\", \\\"type\\\": \\\"tool_call\\\"}]\"}",
+                    "{\"tool\": \"Successfully transferred to okahu-demo-lg-agent-weather_assistant\"}",
+                    "{\"ai\": \"The weather in Mumbai next week is expected to be around 78\\u00b0F.\"}",
+                    "{\"ai\": \"Transferring back to okahu-demo-lg-agent-travel_supervisor\"}",
+                    "{\"tool\": \"Successfully transferred back to okahu-demo-lg-agent-travel_supervisor\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:23.872895Z",
+            "attributes": {
+                "response": "{\"ai\": \"The weather in Mumbai next week is expected to be around 78\\u00b0F.\"}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2025-09-09T23:35:23.872924Z",
+            "attributes": {
+                "completion_tokens": 16,
+                "prompt_tokens": 335,
+                "total_tokens": 351,
+                "finish_reason": "stop",
+                "finish_type": "success",
+                "inference_sub_type": "turn_end"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langchain.schema.runnable.RunnableSequence.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x0421b87e59447765",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x6730b138c7e571a7",
+    "start_time": "2025-09-09T23:35:23.235023Z",
+    "end_time": "2025-09-09T23:35:23.873093Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/prebuilt/chat_agent_executor.py:763",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "generic",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x4a281c886858ef47f603d03ca3987cf"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langgraph.graph.state.CompiledStateGraph.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x6730b138c7e571a7",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0b994f5a66326723",
+    "start_time": "2025-09-09T23:35:23.233560Z",
+    "end_time": "2025-09-09T23:35:23.874405Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/.env/lib/python3.12/site-packages/langgraph/utils/runnable.py:583",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "agentic.invocation",
+        "span.subtype": "routing",
+        "entity.1.type": "agent.langgraph",
+        "entity.1.name": "okahu-demo-lg-agent-travel_supervisor",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x4a281c886858ef47f603d03ca3987cf",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:23.874384Z",
+            "attributes": {
+                "query": "How's the weather going to be in Mumbai next week"
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:23.874397Z",
+            "attributes": {
+                "response": "The weather in Mumbai next week is expected to be around 78\u00b0F."
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "langgraph.graph.state.CompiledStateGraph.ainvoke",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x0b994f5a66326723",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x697aaaf1ea036226",
+    "start_time": "2025-09-09T23:35:19.274622Z",
+    "end_time": "2025-09-09T23:35:23.875015Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/python/lg-travel-agent/lg-travel-agent.py:85",
+        "workflow.name": "lg-travel-agent",
+        "parent.agent.span": true,
+        "span.type": "agentic.request",
+        "span.subtype": "planning",
+        "entity.1.type": "agent.langgraph",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x81a6bf27cdf4d14e1645b36be58786ef",
+        "entity.count": 1
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2025-09-09T23:35:23.874999Z",
+            "attributes": {
+                "input": "How's the weather going to be in Mumbai next week"
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2025-09-09T23:35:23.875008Z",
+            "attributes": {
+                "response": "The weather in Mumbai next week is expected to be around 78\u00b0F."
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "workflow",
+    "context": {
+        "trace_id": "0x0e1f511f19584e833073fd83e0552917",
+        "span_id": "0x697aaaf1ea036226",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-09-09T23:35:19.274551Z",
+    "end_time": "2025-09-09T23:35:23.875025Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.5.1",
+        "monocle_apptrace.language": "python",
+        "span_source": "/Users/prasad/repos/monocle2ai/examples/python/lg-travel-agent/lg-travel-agent.py:85",
+        "scope.agentic.request": "0x27237652334d15946644adddd83bd748",
+        "scope.agentic.invocation": "0x81a6bf27cdf4d14e1645b36be58786ef",
+        "workflow.name": "lg-travel-agent",
+        "span.type": "workflow",
+        "entity.1.name": "lg-travel-agent",
+        "entity.1.type": "workflow.langgraph",
+        "entity.2.type": "app_hosting.generic",
+        "entity.2.name": "generic"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "lg-travel-agent"
+        },
+        "schema_url": ""
+    }
+}
+]

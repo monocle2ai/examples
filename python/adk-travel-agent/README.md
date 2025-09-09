@@ -1,7 +1,7 @@
 # Okahu agent demo with Google Agent Development Kit
 This repo includes a demo agent application built using Google Agent Development Kit (ADK).
-This is a travel agent app that handles mock flight and hotel booking. There's a root agent that coordinates task with multiple agents that handle individual tasks like flight booking or hotel booking. Each agent has (mock) tools to execute these of the task. 
-It forces a limit on max output token. This forces agent's response inaccurate for larger questions. The demo shows how you can use Monocle's tracing and MCP to find the root cause of the problem.
+This is a travel agent app that handles mock flight and hotel booking. There's a root agent that coordinates task with multiple agents that handle individual tasks like flight booking or hotel booking. Each agent has (mock) tools to execute these of the task. To simulate problems in real world scenarios, this app has set a limit on max output token. This results int problems when agent is asked to perform large/complext tasks.
+
 
 ## Pre-requisting
 - Follow the steps in top level [README](../../README.md) to setup environment running this example
