@@ -1,6 +1,6 @@
 # Okahu agent demo with Google Agent Development Kit
-This repo includes a demo agent application built using Google Agent Development Kit (ADK). 
-You can fork this repo and run the app in Github Codespaces or laptop/desktop to get started quickly.
+This repo includes a demo agent application built using Google Agent Development Kit (ADK).
+This is a travel agent app that handles mock flight and hotel booking. It forces a low token usage due to which the agent's response is not half baked. The demo shows how you can use Monocle's tracing and MCP to find the root cause of the problem.
 
 ## Pre-requisting
 - Follow the steps in top level [README](../../README.md) to setup environment running this example
