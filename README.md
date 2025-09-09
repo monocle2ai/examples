@@ -1,20 +1,18 @@
 # Monocle examples
 
-This repo contains examples applications with steps to run these with Monocle tracing enabled in VS Code. Follow the common [setup instruction](#setup-dev-enviroment-in-vs-code) listed here. Then navigate to any of the examples folders that you want to explore and follow the steps there to run it.
+This repo contains examples applications with steps to run these with [Monocle](https://monocle2ai.org) tracing enabled in VS Code. Follow the steps listed below to configure dev environment and VS Code. Then navigate to individual examples folders to try out various agentic apps with Monocle.
 
-## What is Monocle
-[Monocle](https://monocle2ai.org) helps developers and platform engineers building or managing GenAI apps monitor these in prod by making it easy to instrument their code to capture traces that are compliant with open-source cloud-native observability ecosystem.
-
-## Setup dev enviroment in VS Code
+## Setup dev enviroment
 This section illustrates steps to setup your VS Code to use Monocle.
 ### Pre-requistis
-- Visual Studio Code installed
+- Visual Studio Code, version 1.102 or above
+- Python, version 3.9 or above
 - [Github Copilot for VS Code enabled](https://code.visualstudio.com/docs/copilot/setup)
-- VS Code has MCP server [enabled](https://code.visualstudio.com/docs/copilot/customization/mcp-servers#_enable-mcp-support-in-vs-code)
-- UV package installed on your machine
-  - Use `pip` command to install. Note that you should be installing this in a global python env on your machine and not in a virtual env
+- VS Code has [MCP server enabled](https://code.visualstudio.com/docs/copilot/customization/mcp-servers#_enable-mcp-support-in-vs-code)
+- UV package installed
+  - Use `pip` command to install UV package. Note that you should be installing this in a global python env on your machine and not in a local/virtual python env
   - ```pip install uv```
-  - Restart VS Code
+  - Restart VS Code if it's already running.
 
 ### Install Monocle VS code extension
 The Monocle VS Code extension makes it super simple to setup the instrumentation and visualize the traces
