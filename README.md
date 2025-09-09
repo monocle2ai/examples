@@ -6,7 +6,7 @@ This repo contains examples applications with steps to run these with [Monocle](
 This section illustrates steps to setup your VS Code to use Monocle.
 ### Pre-requistis
 - Visual Studio Code, version 1.102 or above
-- Python, version 3.9 or above
+- Python, version 3.10 or above
 - [Github Copilot for VS Code enabled](https://code.visualstudio.com/docs/copilot/setup)
 - VS Code has [MCP server enabled](https://code.visualstudio.com/docs/copilot/customization/mcp-servers#_enable-mcp-support-in-vs-code)
 - UV package installed
