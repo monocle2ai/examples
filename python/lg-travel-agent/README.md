@@ -29,16 +29,18 @@ This application is an travel agent app that mocks travel related tasks like fli
 It's is a python program using Langgraph Agent framework. 
 The app uses OpenAI gpt-4o model for inference.
 
-1. Start the mock weather MCP server
+1. Start VS Code and open the root repository folder
+2. Open a new terminal windows in VS code
+3. Start the mock weather MCP server in the new terminal window
   ```python weather-mcp-server.py > mcp.out 2>&1 &```
-2. Verify mcp server is running
+4. Verify mcp server is running
   ```cat mcp.out```
   The above command prints content of mpc.out file which should show a message `Application startup complete`
-3. Open `lg-travel-agent.py`
-4. Replace <OPENAI-API-KEY> with the value of OpenAI API key
-5. Right click on the file. It will pop up a list of menu options.
+5. Open `lg-travel-agent.py`
+6. Replace <OPENAI-API-KEY> with the value of OpenAI API key
+7. Right click on the file. It will pop up a list of menu options.
   - Select `Monocle` -->  `Run Python with Monocle`
-6. The application will prompt you for a travel booking task. You can enter something like `Book a flight from SFO to BOM next week. Book Marriot hotel in central mumbai. Also how't the weather going to be in Mumbai next week?`
-7. Follow these [steps](../../README.md#get-trace-summary-using-github-copilot-and-monocle-mcp) to review trace summary
+8. The application will prompt you for a travel booking task. You can enter something like `Book a flight from SFO to BOM next week. Book Marriot hotel in central mumbai. Also how't the weather going to be in Mumbai next week?`
+9. Follow these [steps](../../README.md#get-trace-summary-using-github-copilot-and-monocle-mcp) to review trace summary
 
 

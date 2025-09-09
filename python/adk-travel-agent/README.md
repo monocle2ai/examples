@@ -25,9 +25,10 @@ This application is a travel agent app that mocks travel related tasks like flig
 It's is a python program using Google Agent Development Kit. 
 The app uses Gemini gemini-2.0-flash model for inference.
 
-1. Open `adk-travel-agent.py` 
-2. Replace <GOOGLE-API-KEY> with the value of Google API key
-3. Right click on the file. It will pop up a list of menu options.
+1. Start VS Code and open the root repository folder
+2. Open `adk-travel-agent.py` 
+3. Replace <GOOGLE-API-KEY> with the value of Google API key
+4. Right click on the file. It will pop up a list of menu options.
   - Select `Monocle` -->  `Run Python with Monocle`
-4. The application will prompt you for a travel booking task. You can enter something like `Book a flight from San Francisco to Mumbai for 26th Nov 2025. Book a two queen room at Marriot Intercontinental at Juhu, Mumbai for 27th Nov 2025 for 4 nights.`
-5. Follow these [steps](../../README.md#get-trace-summary-using-github-copilot-and-monocle-mcp) to review trace summary
+5. The application will prompt you for a travel booking task. You can enter something like `Book a flight from San Francisco to Mumbai for 26th Nov 2025. Book a two queen room at Marriot Intercontinental at Juhu, Mumbai for 27th Nov 2025 for 4 nights.`
+6. Follow these [steps](../../README.md#get-trace-summary-using-github-copilot-and-monocle-mcp) to review trace summary
