@@ -11,6 +11,7 @@ from google.genai import types
 
 os.environ["GOOGLE_API_KEY"] = "<GOOGLE-API-KEY>"  # Replace with your Google API key
 os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "FALSE"
+MAX_OUTPUT_TOKENS = 50
 
 def adk_book_flight_5(from_airport: str, to_airport: str) -> dict:
     """Books a flight from one airport to another.
@@ -46,7 +47,7 @@ def adk_book_hotel_5(hotel_name: str, city: str) -> dict:
     }
 
 # Low token limit to trigger issues in agent processing
-contentConfig: types.GenerateContentConfig = types.GenerateContentConfig(max_output_tokens=25)
+contentConfig: types.GenerateContentConfig = types.GenerateContentConfig(max_output_tokens=MAX_OUTPUT_TOKENS)
 
 flight_booking_agent = LlmAgent(
     name="adk_flight_booking_agent_5",

@@ -1,6 +1,7 @@
 # Okahu agent demo with Google Agent Development Kit
 This repo includes a demo agent application built using Google Agent Development Kit (ADK).
-This is a travel agent app that handles mock flight and hotel booking. It forces a low token usage due to which the agent's response is not half baked. The demo shows how you can use Monocle's tracing and MCP to find the root cause of the problem.
+This is a travel agent app that handles mock flight and hotel booking. There's a root agent that coordinates task with multiple agents that handle individual tasks like flight booking or hotel booking. Each agent has (mock) tools to execute these of the task. 
+It forces a limit on max output token. This forces agent's response inaccurate for larger questions. The demo shows how you can use Monocle's tracing and MCP to find the root cause of the problem.
 
 ## Pre-requisting
 - Follow the steps in top level [README](../../README.md) to setup environment running this example
@@ -30,5 +31,7 @@ The app uses Gemini gemini-2.0-flash model for inference.
 3. Replace <GOOGLE-API-KEY> with the value of Google API key
 4. Right click on the file. It will pop up a list of menu options.
   - Select `Monocle` -->  `Run Python with Monocle`
-5. The application will prompt you for a travel booking task. You can enter something like `Book a flight from San Francisco to Mumbai for 26th Nov 2025. Book a two queen room at Marriot Intercontinental at Juhu, Mumbai for 27th Nov 2025 for 4 nights.`
-6. Follow these [steps](../../README.md#get-trace-summary-using-github-copilot-and-monocle-mcp) to review trace summary
+5. The application will be launched in a new terminal window and it'll prompt you for a travel booking task.
+  - A simple task will generate accurate response `Book a flight from SFO to JFK for tomorrow.`
+  - A larger, more complex prompt results into inaccurate response `Book a flight from San Francisco to Mumbai for 26th Nov 2025. Book a two queen room at Marriot Intercontinental at Juhu, Mumbai for 27th Nov 2025 for 4 nights.`
+6. Follow these [steps](../../README.md#get-trace-summary-using-github-copilot-and-monocle-mcp) to analyze the trace using Copilot and Monocle MCP. It'll illustrate how Monocle trace captures the details of the agentic execution and the how to determine the root cause of the problematic agent behavior.

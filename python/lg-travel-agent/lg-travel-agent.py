@@ -14,6 +14,7 @@ import logging
 logger = logging.getLogger(__name__)
 DEFAULT_PORT = 8007
 port = int(os.getenv("PORT", DEFAULT_PORT))
+MAX_OUTPUT_TOKENS = 50
 
 @tool("okahu-demo-lg-tool_book_hotel", description="Book a hotel for a stay")
 def book_hotel(hotel_name: str):
@@ -68,7 +69,7 @@ async def setup_agents():
     supervisor = create_supervisor(
         supervisor_name="okahu-demo-lg-agent-travel_supervisor",
         agents=[flight_assistant, hotel_assistant, weather_agent],
-        model=ChatOpenAI(model="gpt-4o"),
+        model=ChatOpenAI(model="gpt-4o", max_completion_tokens=MAX_OUTPUT_TOKENS),
         prompt=(
             "You manage a hotel booking assistant and a"
             "flight booking assistant. Assign work to them."

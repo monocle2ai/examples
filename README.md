@@ -46,6 +46,7 @@ The Monocle MCP server contains a set of prompts to analyze traces and provide a
 ```python -m venv .env```
 
 ## Monocle Examples
+Following are the python agentic examples. Please follow the steps in individual example Readme file to install the required libraries and run the app.
 ### Python
 1. [Travel agent example](./python/adk-travel-agent/) implemented using Google ADK
 2. [Travel agent example](./python/lg-travel-agent/) implemented using Langgraph
