@@ -1,17 +1,22 @@
+
 import datetime
 import asyncio
 import logging
 import os
 from zoneinfo import ZoneInfo
 
+from dotenv import load_dotenv
 from google.adk.agents import LlmAgent, SequentialAgent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
 
-os.environ["GOOGLE_API_KEY"] = "<GOOGLE-API-KEY>"  # Replace with your Google API key
 os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "FALSE"
 MAX_OUTPUT_TOKENS = 50
+load_dotenv()
+#Enable Monocle Tracing
+from monocle_apptrace import setup_monocle_telemetry
+setup_monocle_telemetry(workflow_name = 'examples', monocle_exporters_list = 'file')
 
 def adk_book_flight_5(from_airport: str, to_airport: str) -> dict:
     """Books a flight from one airport to another.
@@ -25,8 +30,8 @@ def adk_book_flight_5(from_airport: str, to_airport: str) -> dict:
         dict: status and message.
     """
     return {
-        "status": "success",
-        "message": f"Flight booked from {from_airport} to {to_airport}."
+        "status": "error",
+        "message": f"Technical problem occurred while booking flight from {from_airport} to {to_airport}."
     }
 
 def adk_book_hotel_5(hotel_name: str, city: str) -> dict:
@@ -53,7 +58,8 @@ flight_booking_agent = LlmAgent(
     name="adk_flight_booking_agent_5",
     model="gemini-2.0-flash",
     description= "Agent to book flights based on user queries.",
-    instruction= "You are a helpful agent who can assist users in booking flights.",
+#    instruction= "You are a helpful agent who can assist users in booking flights. If you are asked about flight bookings, provide the relevant information.",
+    instruction= "You are a helpful agent who can assist users in booking flights. You only handle flight booking. Just handle that part from what the user says, ignore other parts of the requests.",
     generate_content_config=contentConfig,
     tools=[adk_book_flight_5]  # Define flight booking tools here
 )
@@ -62,7 +68,8 @@ hotel_booking_agent = LlmAgent(
     name="adk_hotel_booking_agent_5",
     model="gemini-2.0-flash",
     description= "Agent to book hotels based on user queries.",
-    instruction= "You are a helpful agent who can assist users in booking hotels. If you are asked about hotel bookings, provide the relevant information. If not, then just stay silent.",
+#    instruction= "You are a helpful agent who can assist users in booking hotels. If you are asked about hotel bookings, provide the relevant information. If not, then just stay silent.",
+    instruction= "You are a helpful agent who can assist users in booking hotels. When you receive a request containing both hotel and non-hotel bookings, focus on processing the hotel booking portion while gracefully ignoring non-hotel parts. Always try to identify and process any hotel booking requests present in the user's message.",
     generate_content_config=contentConfig,
     tools=[adk_book_hotel_5]  # Define hotel booking tools here
 )
@@ -71,7 +78,7 @@ trip_summary_agent = LlmAgent(
     name="adk_trip_summary_agent_5",
     model="gemini-2.0-flash",
     description= "Summarize the travel details from hotel bookings and flight bookings agents.",
-    instruction= "Summarize the travel details from hotel bookings and flight bookings agents.",
+    instruction= "Summarize the travel details from hotel bookings and flight bookings agents. Be concise in response and provide a single sentence summary.",
     generate_content_config=contentConfig,
     output_key="booking_summary"
 )
@@ -118,6 +125,7 @@ async def run_agent(test_message: str):
             response = event.content
 
     print(response.parts[0].text)  # Print the last response text
+    return response.parts[0].text
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.ERROR)

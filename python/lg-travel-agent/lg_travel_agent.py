@@ -1,3 +1,6 @@
+# Enable Monocle Tracing
+from dotenv import load_dotenv
+
 import asyncio
 import os
 import time
@@ -8,13 +11,14 @@ from langgraph_supervisor import create_supervisor
 from langchain_core.tools import tool
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
-os.environ["OPENAI_API_KEY"] = "<OPENAI-API-KEY>"  # Replace with your OpenAI API key
-
 import logging
 logger = logging.getLogger(__name__)
 DEFAULT_PORT = 8007
 port = int(os.getenv("PORT", DEFAULT_PORT))
 MAX_OUTPUT_TOKENS = 50
+load_dotenv()
+from monocle_apptrace import setup_monocle_telemetry
+setup_monocle_telemetry(workflow_name = 'examples', monocle_exporters_list = 'file')
 
 @tool("okahu-demo-lg-tool_book_hotel", description="Book a hotel for a stay")
 def book_hotel(hotel_name: str):
@@ -92,6 +96,7 @@ async def run_agent(request: str):
         ]
     })
     print(chunk["messages"][-1].content)
+    return chunk["messages"][-1].content
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.WARN)

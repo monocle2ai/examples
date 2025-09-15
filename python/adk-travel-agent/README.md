@@ -27,8 +27,8 @@ It's is a python program using Google Agent Development Kit.
 The app uses Gemini gemini-2.0-flash model for inference.
 
 1. Start VS Code and open the root repository folder
-2. Open `adk-travel-agent.py` 
-3. Replace <GOOGLE-API-KEY> with the value of Google API key
+2. copy `env.template` to `.env` under the root repository folder
+3. Open `.env` set value for <GOOGLE-API-KEY> to your Google API key
 4. Right click on the file. It will pop up a list of menu options.
   - Select `Monocle` -->  `Run Python with Monocle`
 5. The application will be launched in a new terminal window and it'll prompt you for a travel booking task.
