@@ -18,7 +18,7 @@ load_dotenv()
 from monocle_apptrace import setup_monocle_telemetry
 setup_monocle_telemetry(workflow_name = 'examples', monocle_exporters_list = 'file')
 
-def adk_book_flight_5(from_airport: str, to_airport: str) -> dict:
+def adk_book_flight(from_airport: str, to_airport: str) -> dict:
     """Books a flight from one airport to another.
 
     Args:
@@ -30,11 +30,11 @@ def adk_book_flight_5(from_airport: str, to_airport: str) -> dict:
         dict: status and message.
     """
     return {
-        "status": "error",
-        "message": f"Technical problem occurred while booking flight from {from_airport} to {to_airport}."
+        "status": "success",
+        "message": f"Booked the flight from {from_airport} to {to_airport}."
     }
 
-def adk_book_hotel_5(hotel_name: str, city: str) -> dict:
+def adk_book_hotel(hotel_name: str, city: str) -> dict:
     """Books a hotel for a stay.
 
     Args:
@@ -55,27 +55,27 @@ def adk_book_hotel_5(hotel_name: str, city: str) -> dict:
 contentConfig: types.GenerateContentConfig = types.GenerateContentConfig(max_output_tokens=MAX_OUTPUT_TOKENS)
 
 flight_booking_agent = LlmAgent(
-    name="adk_flight_booking_agent_5",
+    name="adk_flight_booking_agent",
     model="gemini-2.0-flash",
     description= "Agent to book flights based on user queries.",
 #    instruction= "You are a helpful agent who can assist users in booking flights. If you are asked about flight bookings, provide the relevant information.",
     instruction= "You are a helpful agent who can assist users in booking flights. You only handle flight booking. Just handle that part from what the user says, ignore other parts of the requests.",
     generate_content_config=contentConfig,
-    tools=[adk_book_flight_5]  # Define flight booking tools here
+    tools=[adk_book_flight]  # Define flight booking tools here
 )
 
 hotel_booking_agent = LlmAgent(
-    name="adk_hotel_booking_agent_5",
+    name="adk_hotel_booking_agent",
     model="gemini-2.0-flash",
     description= "Agent to book hotels based on user queries.",
 #    instruction= "You are a helpful agent who can assist users in booking hotels. If you are asked about hotel bookings, provide the relevant information. If not, then just stay silent.",
     instruction= "You are a helpful agent who can assist users in booking hotels. When you receive a request containing both hotel and non-hotel bookings, focus on processing the hotel booking portion while gracefully ignoring non-hotel parts. Always try to identify and process any hotel booking requests present in the user's message.",
     generate_content_config=contentConfig,
-    tools=[adk_book_hotel_5]  # Define hotel booking tools here
+    tools=[adk_book_hotel]  # Define hotel booking tools here
 )
 
 trip_summary_agent = LlmAgent(
-    name="adk_trip_summary_agent_5",
+    name="adk_trip_summary_agent",
     model="gemini-2.0-flash",
     description= "Summarize the travel details from hotel bookings and flight bookings agents.",
     instruction= "Summarize the travel details from hotel bookings and flight bookings agents. Be concise in response and provide a single sentence summary.",
@@ -84,7 +84,7 @@ trip_summary_agent = LlmAgent(
 )
 
 root_agent = SequentialAgent(
-    name="adk_supervisor_agent_5",
+    name="adk_supervisor_agent",
     description=
         """
             You are the supervisor agent that coordinates the flight booking and hotel booking.

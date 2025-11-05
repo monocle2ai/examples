@@ -18,8 +18,8 @@ agent_test_cases:list[TestCase] = [
     #         {
     #         "span_type": "agentic.tool.invocation",
     #         "entities": [
-    #             {"type": "tool", "name": "okahu-demo-lg-tool_book_flight"},
-    #             {"type": "agent", "name": "okahu-demo-lg-agent-air_travel_assistant"}
+    #             {"type": "tool", "name": "-lg-tool_book_flight"},
+    #             {"type": "agent", "name": "-lg-agent-air_travel_assistant"}
     #         ],
     #     }
     #     ]
@@ -30,7 +30,7 @@ agent_test_cases:list[TestCase] = [
     #         {
     #         "span_type": "agentic.invocation",
     #         "entities": [
-    #             {"type": "agent", "name": "okahu-demo-lg-agent-travel_supervisor"}
+    #             {"type": "agent", "name": "-lg-agent-travel_supervisor"}
     #         ],
     #         "expect_errors": True,
     #         }
@@ -40,7 +40,7 @@ agent_test_cases:list[TestCase] = [
         "test_input": ["Book a flight from San Francisco to Mumbai for 26th Nov 2025."],
         # "mock_tools": [
         #     {
-        #         "name": "okahu-demo-lg-tool_book_flight",
+        #         "name": "-lg-tool_book_flight",
         #         "type": "tool.adk",
         #         "response": {
         #             "status": "success",
@@ -52,7 +52,7 @@ agent_test_cases:list[TestCase] = [
             {
                 "span_type": "agentic.tool.invocation",
                 "entities": [
-                    {"type": "tool", "name": "okahu-demo-lg-tool_book_flight"},
+                    {"type": "tool", "name": "-lg-tool_book_flight"},
                 ],
                 "output": "Successfully booked a flight from San Francisco to Mumbai.",
                 "comparer": "similarity",

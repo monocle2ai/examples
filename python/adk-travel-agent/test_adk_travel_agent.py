@@ -29,8 +29,8 @@ agent_test_cases:list[TestCase] = [
             {
             "span_type": "agentic.tool.invocation",
             "entities": [
-                {"type": "tool", "name": "adk_book_flight_5"},
-                {"type": "agent", "name": "adk_flight_booking_agent_5"}
+                {"type": "tool", "name": "adk_book_flight"},
+                {"type": "agent", "name": "adk_flight_booking_agent"}
             ],
             "expect_errors": True,
         }
@@ -57,7 +57,7 @@ agent_test_cases:list[TestCase] = [
     #     "test_input": ["Book a flight from San Francisco to Mumbai for 26th Nov 2025."],
     #     "mock_tools": [
     #         {
-    #             "name": "adk_book_flight_5",
+    #             "name": "adk_book_flight",
     #             "type": "tool.adk",
     #             "response": {
     #                 "status": "success",
@@ -69,7 +69,7 @@ agent_test_cases:list[TestCase] = [
     #         {
     #             "span_type": "agentic.tool.invocation",
     #             "entities": [
-    #                 {"type": "tool", "name": "adk_book_flight_5"},
+    #                 {"type": "tool", "name": "adk_book_flight"},
     #             ],
     #             "output": "Successfully booked a flight from San Francisco to Mumbai.",
     #             "comparer": "similarity",

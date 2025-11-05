@@ -20,12 +20,12 @@ load_dotenv()
 from monocle_apptrace import setup_monocle_telemetry
 setup_monocle_telemetry(workflow_name = 'examples', monocle_exporters_list = 'file')
 
-@tool("okahu-demo-lg-tool_book_hotel", description="Book a hotel for a stay")
+@tool("lg-tool_book_hotel", description="Book a hotel for a stay")
 def book_hotel(hotel_name: str):
     """Book a hotel"""
     return f"Successfully booked a stay at {hotel_name}."
 
-@tool("okahu-demo-lg-tool_book_flight", description="Book a flight from one airport to another")
+@tool("lg-tool_book_flight", description="Book a flight from one airport to another")
 def book_flight(from_airport: str, to_airport: str):
     """Book a flight"""
     return f"Successfully booked a flight from {from_airport} to {to_airport}."
@@ -54,24 +54,24 @@ async def setup_agents():
         model="openai:gpt-4o",
         tools=[book_flight],
         prompt="You are a flight booking assistant",
-        name="okahu-demo-lg-agent-air_travel_assistant"
+        name="lg-agent-air_travel_assistant"
     )
 
     hotel_assistant = create_react_agent(
         model="openai:gpt-4o",
         tools=[book_hotel],
         prompt="You are a hotel booking assistant",
-        name="okahu-demo-lg-agent-lodging_assistant"
+        name="lg-agent-lodging_assistant"
     )
 
     weather_agent = create_react_agent(
         model="openai:gpt-4o",
         tools=weather_tools,
         prompt="You are a weather information assistant. Please use the tool available to you for checking weather. Extract city name from the user query and pass it to the weather tool.",
-        name="okahu-demo-lg-agent-weather_assistant"
+        name="lg-agent-weather_assistant"
     )
     supervisor = create_supervisor(
-        supervisor_name="okahu-demo-lg-agent-travel_supervisor",
+        supervisor_name="lg-agent-travel_supervisor",
         agents=[flight_assistant, hotel_assistant, weather_agent],
         model=ChatOpenAI(model="gpt-4o", max_completion_tokens=MAX_OUTPUT_TOKENS),
         prompt=(
