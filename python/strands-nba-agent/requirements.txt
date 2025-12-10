@@ -1,0 +1,4 @@
+strands-agents
+strands-agents-tools
+nba_api
+monocle_apptrace
